@@ -11,9 +11,12 @@ public:
     Fixed();
     Fixed(const float num);
     Fixed(const int num);
-    Fixed(Fixed& obj);
-    float operator << (const float num);
-    float toFloat( void ) const;
-    int toInt( void ) const;
+    Fixed(const Fixed& obj);
     ~Fixed();
+    Fixed &operator = (Fixed const& src);
+    std::ostream&   operator << (std::ostream& a, const Fixed &obj1);
+    int             toInt( void ) const;
+    float           toFloat( void ) const;
+    int		        getRawBits() const;
+	void	        setRawBits(int const raw);
 };
